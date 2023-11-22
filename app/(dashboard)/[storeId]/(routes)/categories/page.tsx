@@ -5,7 +5,7 @@ import prismadb from "@/lib/prismadb";
 import { CategoryColumnProps } from "./components/CategoryColumn";
 import CategoryClient from "./components/CategoryClient";
 
-const CategoriesPage = async ( {params}: {params: {storeId: string}} ) => {
+const CategoriesPage = async ( {params}: {params: {storeId: string} } ) => {
   const categories = await prismadb.category.findMany({
     where: {
       storeId: params.storeId,
@@ -18,7 +18,7 @@ const CategoriesPage = async ( {params}: {params: {storeId: string}} ) => {
     },
   });
 
-  const formattedCategories: CategoryColumnProps[] = categories.map((item) => ({
+  const formattedCategories: CategoryColumnProps[] = categories.map(item => ({
     id: item.id,
     name: item.name,
     billboardLabel: item.billboard.label,
