@@ -1,3 +1,5 @@
+To run the application you have to create a ".env" file at the root of the project. This file will contain the environment variables which are the ones below:
+
 # General
 FRONTEND_STORE_URL=[Front end link]
 
